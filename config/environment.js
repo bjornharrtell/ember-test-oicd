@@ -18,6 +18,22 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    'ember-simple-auth': {
+      routeAfterAuthentication: '',
+    },
+
+    'ember-simple-auth-oidc': {
+      host: 'https://dev-xxx.us.auth0.com',
+      scope: 'openid',
+      clientId: 'xxx',
+      authEndpoint: '/authorize',
+      tokenEndpoint: '/oauth/token',
+      endSessionEndpoint: '/endsession',
+      userinfoEndpoint: '/userinfo',
+      afterLogoutUri: '/loggedout',
+      enablePkce: true,
+    },
   };
 
   if (environment === 'development') {
